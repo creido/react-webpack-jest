@@ -1,0 +1,55 @@
+{
+  "name": "react-webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Chris Reid",
+  "license": "ISC",
+  "scripts": {
+    "build": "npm run prod",
+    "clean": "rm -r ./dist || true",
+    "dev": "webpack-dev-server --hot --inline --config config/webpack.config.dev.js",
+    "prod": "npm run test && npm run clean && webpack --config config/webpack.config.prod.js",
+    "start": "npm run dev",
+    "test": "jest",
+    "test:dev": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "./node_modules/babel-jest"
+    },
+    "verbose": true
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
+    "babel-loader": "^7.1.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.10",
+    "eslint": "^4.18.2",
+    "eslint-plugin-jest": "^21.13.0",
+    "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.0.4",
+    "jest": "^22.4.2",
+    "node-sass": "^4.7.2",
+    "react-test-renderer": "^16.2.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.2",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "3.10.0",
+    "webpack-cli": "2.0.4",
+    "webpack-dev-server": "2.11.1",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
